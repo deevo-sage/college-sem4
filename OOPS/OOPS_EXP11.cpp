@@ -1,24 +1,15 @@
 #include <iostream>
-#include <conio.h>
 using namespace std;
 class maxx
 {
-  int x;
-  int y;
-  int z;
+  int x, y, z;
 
 public:
-  void getdata()
+  void
+  getdata()
   {
-    cout << endl
-         << "Enter the value of x:";
-    cin >> x;
-    cout << endl
-         << "Enter the the value of y:";
-    cin >> y;
-    cout << endl
-         << "Enter the value of z:";
-    cin >> z;
+    cout << "Enter the 3 numbers :";
+    cin >> x >> y >> z;
   }
   friend float greatest(maxx m)
   {
@@ -35,8 +26,7 @@ int main()
   int result;
   maxx m;
   m.getdata();
-  result = greatest(m);
-  cout << endl
-       << "Sidharth Sahni 30-IT-19\n Greatest of three numbers x,y and z is:" << result;
+  cout << "Program 11\nSidharth Sahni \n30-IT-19\n";
+  cout << "Greatest of the three numbers  is " << greatest(m) << endl;
   return 0;
 }

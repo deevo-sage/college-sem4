@@ -1,43 +1,45 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
-class complex{
-	float x,y;
-	public:
-		complex(){}
-		complex(float a)
-		{
-			x=y=a;
-		}
-		complex(float r,float img)
-		{
-			x=r;
-			y=img;
-		}
-		friend complex sum(complex c2,complex c3)
-		{
-			complex a;
-			a.x=c2.x+c3.x;
-			a.y=c2.y+c3.y;
-			return(a);
-		}
-		void display(complex c)
-		{
-			cout<<c.x<<" "<<"+j"<<" "<<c.y;
-		}
+class complex
+{
+	float x, y;
+
+public:
+	complex() {}
+	complex(float a)
+	{
+		x = y = a;
+	}
+	complex(float r, float img)
+	{
+		x = r;
+		y = img;
+	}
+	friend complex sum(complex c1, complex c2)
+	{
+		complex a;
+		a.x = c1.x + c2.x;
+		a.y = c1.y + c2.y;
+		return (a);
+	}
+	void display()
+	{
+		cout << x << " "
+			 << "+j"
+			 << y << endl;
+	}
 };
 int main()
 {
-	cout<<"\n Sidharth Sahni 30-IT-19"<<endl;
-	cout<<"\n ADDITION OF TWO COMPLEX NUMBER"<<endl;
-	complex c1;
-	complex c2(6,8.9);
-	complex c3(9.7,8.9);
-	complex c4,c5;
-	c4=sum(c2,c3);
-	cout<<"First Complex Number:C1=";
-	c5.display(c2);
-	cout<<endl<<"Second Complex Number:C2=";
-	c5.display(c3);
-	cout<<endl<<"Resultant:C=C1+C2=";
-	c5.display(c4);
+	cout << "Program 9\nSidharth Sahni \n30-IT-19" << endl;
+	complex c1(3.0, 4.3);
+	complex c2(7.1, 9.1);
+	complex c3;
+	c3 = sum(c1, c2);
+	cout << "c1=";
+	c1.display();
+	cout << "c2=";
+	c2.display();
+	cout << "c1+c2=";
+	c3.display();
 }

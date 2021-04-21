@@ -2,28 +2,27 @@
 using namespace std;
 class fibonacci
 {
-	int f, f1, f2, m;
+	int n;
 
 public:
 	fibonacci()
 	{
 	}
-	fibonacci(int n)
+	fibonacci(int x)
 	{
-		m = n;
+		n = x;
 	}
 	fibonacci(fibonacci &x)
 	{
-		x.f1 = 0;
-		x.f2 = 1;
+		int a = 0, b = 1, temp;
 		cout << "\n The fibonacci series is:\n\n";
-		cout << " " << x.f1 << " " << x.f2;
-		for (int i = 2; i <= x.m; i++)
+		cout << " " << a << " " << b;
+		for (int i = 2; i <= x.n; i++)
 		{
-			x.f = x.f1 + x.f2;
-			cout << " " << x.f;
-			x.f1 = x.f2;
-			x.f2 = x.f;
+			temp = a + b;
+			cout << " " << temp;
+			a = b;
+			b = temp;
 		}
 	}
 };
@@ -31,9 +30,8 @@ int main()
 {
 	char c;
 	int n;
-	cout << "\n Sidharth Sahni 30-IT-19" << endl;
-	cout << "\n FIBONACCI SERIES USING CONSTRUCTOR" << endl;
-	cout << "\nEnter the length of series: ";
+	cout << "Program 10\nSidharth Sahni \n30-IT-19" << endl;
+	cout << "\nenter n: ";
 	cin >> n;
 	fibonacci A(n);
 	fibonacci B(A);

@@ -38,8 +38,7 @@ void greatest(A a, B b)
 }
 int main()
 {
-      cout << "\n Sidharth Sahni 30-IT-19" << endl;
-      cout << "\n GREATEST OF TWO NUMBERS IN TWO DIFFERENT CLASSES" << endl;
+      cout << "Program 12\nSidharth Sahni \n30-IT-19\n";
       A a;
       a.getdata();
       B b;
