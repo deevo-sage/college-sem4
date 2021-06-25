@@ -1,67 +1,85 @@
-//Single Inheritance
-#include<iostream>
+#include <bits/stdc++.h>
 using namespace std;
-class basic_info
+class first
 {
-      char name[25];
-      int rno;
-      char sex;
+protected:
+      int book_no;
+      string book_name;
+
 public:
-      void getdata();
-      void putdata();
-};
-void basic_info::getdata()
-{
-      cout << "Enter name: ";
-      gets(name);
-      cout << "\nEnter rollno: ";
-      cin >> rno;
-      cout << "\nEnter sex: ";
-      cin >> sex;
-}
-void basic_info::putdata()           // member function definition
-{
-      cout << "\n\nName     : " << name;
-      cout << "\nRoll No. : " << rno;
-      cout << "\nSex      : " << sex;
-}
-class phy_fit: public basic_info    //single inheritance
-{
-      float ht;
-      float wt;
-public:
-      void input()
+      void getdata()
       {
-            getdata();
-            cout << "\nEnter height(in cms): ";
-            cin >> ht;
-            cout << "\nEnter weight(in kg): ";
-            cin >> wt;
+            cout << "\n\nEnter Book No:";
+            cin >> book_no;
+            cout << "\nEnter Book Name:";
+            cin >> book_name;
+      }
+      void putdata()
+      {
+            cout << "\nBook No:" << book_no;
+            cout << "\nBook Name:" << book_name;
+      }
+};
+class second
+{
+protected:
+      string author_name;
+      string publisher;
+
+public:
+      void getdata()
+      {
+            cout << "\nEnter Author Name:";
+            cin >> author_name;
+            cout << "\nEnter Publisher:";
+            cin >> publisher;
+      }
+      void showdata()
+      {
+            cout << "\nAuthor Name:" << author_name;
+            cout << "\nPublisher:" << publisher;
+      }
+};
+class third : public first, public second
+{
+protected:
+      int no_of_pages;
+      int year_of_publication;
+
+public:
+      void getinfo()
+      {
+            cout << "\nEnter no of Pages:";
+            cin >> no_of_pages;
+            cout << "\nEnter Year of Publication:";
+            cin >> year_of_publication;
       }
       void display()
       {
             putdata();
-            cout << "\nHeight   : " << ht;
-            cout << "\nWeight   : " << wt;
+            showdata();
+            cout << "\nNo of Pages:" << no_of_pages;
+            cout << "\nYear of Publication:" << year_of_publication;
       }
-
 };
 int main()
 {
-#ifndef ONLINE_JUDGE
-      freopen("input.txt", "r", stdin);
-      freopen("output.txt", "w", stdout);
-#endif
-      phy_fit obj;
-      obj.input();
-      obj.display();
+      cout << "Program 14\nSidharth Sahni \n30-IT-19\n";
+      int i;
+      third obj[3];
+      for (i = 0; i < 3; i++)
+      {
+            obj[i].first::getdata();
+            obj[i].second::getdata();
+            obj[i].getinfo();
+      }
+      cout << endl
+           << "INFORMATION:" << endl;
+      for (i = 0; i < 3; i++)
+      {
+            cout << endl
+                 << "\nBOOK-" << i + 1 << "\n";
+            obj[i].display();
+      }
       return 0;
 }
-/*INPUT
-Jai Gaur
-5
-M
-180.5
-70.5
-*/
-

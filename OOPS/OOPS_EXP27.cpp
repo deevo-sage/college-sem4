@@ -7,7 +7,8 @@ using namespace std;
 int main(){
     fstream file;
     string myText;
-    file.open("text1.txt",ios::out);
+    cout << "Program 27\nSidharth Sahni \n30-IT-19\n";
+    file.open("text1.txt", ios::out);
     if(!file){
         cout<<"Error in creating file!!!"<<endl;
         exit(0);
@@ -27,6 +28,6 @@ int main(){
         cout<<myText<<endl;
     }
     file.close();
-    cout<<"\n\nGavneesh Jain(12IT19)"<<endl;
+  
     return 0;
 }

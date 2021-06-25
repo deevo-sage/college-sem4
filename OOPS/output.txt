@@ -1,0 +1,51 @@
+
+
+Enter Book No:
+Enter Book Name:
+Enter Author Name:
+Enter Publisher:
+Enter no of Pages:
+Enter Year of Publication:
+
+Enter Book No:
+Enter Book Name:
+Enter Author Name:
+Enter Publisher:
+Enter no of Pages:
+Enter Year of Publication:
+
+Enter Book No:
+Enter Book Name:
+Enter Author Name:
+Enter Publisher:
+Enter no of Pages:
+Enter Year of Publication:
+INFORMATION:
+
+
+BOOK-1
+
+Book No:5139672
+Book Name:
+Author Name:
+Publisher:
+No of Pages:1042131590
+Year of Publication:32764
+
+BOOK-2
+
+Book No:5127272
+Book Name:
+Author Name:
+Publisher:
+No of Pages:4200358
+Year of Publication:0
+
+BOOK-3
+
+Book No:5124608
+Book Name:
+Author Name:
+Publisher:
+No of Pages:4199705
+Year of Publication:0

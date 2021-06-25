@@ -1,101 +1,79 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
-
-class first {
+class STUDENT
+{
 protected:
-    int book_no;
-    string book_name;
+    int roll_no;
+    string name;
+
 public:
     void getdata()
     {
-        cout << "\n\nEnter Book No:";
-        cin >> book_no;
-        cout << "\nEnter Book Name:";
-        cin >> book_name;
+        cout << "\nEnter Roll No.: ";
+        cin >> roll_no;
+        cout << "\nEnter Name: ";
+        cin >> name;
     }
     void putdata()
     {
-        cout << "\nBook No:" << book_no;
-        cout << "\nBook Name:" << book_name;
+        cout << "\nRoll No.: " << roll_no;
+        cout << "\nName: " << name;
     }
 };
-class second {
+class EXAM : public STUDENT
+{
 protected:
-    string author_name;
-    string publisher;
-public:
-    void getdata()
-    {
-        cout << "\nEnter Author Name:";
-        cin >> author_name;
-        cout << "\nEnter Publisher:";
-        cin >> publisher;
-    }
-    void showdata()
-    {
-        cout << "\nAuthor Name:" << author_name;
-        cout << "\nPublisher:" << publisher;
-    }
-};
-class third: public first, public second {
-protected:
-    int no_of_pages;
-    int year_of_publication;
+    int marks[6];
+
 public:
     void getinfo()
     {
-        cout << "\nEnter no of Pages:";
-        cin >> no_of_pages;
-        cout << "\nEnter Year of Publication:";
-        cin >> year_of_publication;
+        cout << "\nEnter marks in six subjects: ";
+        cout << "\nOOP: ";
+        cin >> marks[0];
+        cout << "\nDBMS: ";
+        cin >> marks[1];
+        cout << "\nCOA: ";
+        cin >> marks[2];
+        cout << "\nMATHS: ";
+        cin >> marks[3];
+        cout << "\nTOC: ";
+        cin >> marks[4];
+        cout << "\nCS: ";
+        cin >> marks[5];
     }
-    void display() {
+    void showdata()
+    {
+        cout << "\nMarks in six subjects are: ";
+        cout << "\nOOP: " << marks[0];
+        cout << "\nDBMS: " << marks[1];
+        cout << "\nCOA: " << marks[2];
+        cout << "\nMATHS: " << marks[3];
+        cout << "\nTOC: " << marks[4];
+        cout << "\nCS: " << marks[5];
+    }
+};
+class RESULT : public EXAM
+{
+protected:
+    int total_marks;
+
+public:
+    void display()
+    {
+        total_marks = (marks[0] + marks[1] + marks[2] +
+                       marks[3] + marks[4] + marks[5]);
         putdata();
         showdata();
-        cout << "\nNo of Pages:" << no_of_pages;
-        cout << "\nYear of Publication:" << year_of_publication;
+        cout << "\nTotal Marks: " << total_marks;
     }
 };
 int main()
 {
-#ifndef ONLINE_JUDGE
-    freopen("input.txt", "r", stdin);
-    freopen("output.txt", "w", stdout);
-#endif
-    int i;
-    third obj[3];
-    for (i = 0; i < 3; i++)
-    {
-        obj[i].first::getdata();
-        obj[i].second::getdata();
-        obj[i].getinfo();
-    }
-
-    cout << endl << "INFORMATION:" << endl;
-    for (i = 0; i < 3; i++)
-    {
-        cout << endl << "\nBOOK-" << i + 1 << "\n";
-        obj[i].display();
-    }
+    cout << "Program 15\nSidharth Sahni \n30-IT-19\n";
+    RESULT obj;
+    obj.getdata();
+    obj.getinfo();
+    obj.display();
     return 0;
 }
-/*INPUT
-78
-DBMS
-EBalagurusamy
-McGrowHills
-300
-2001
-79
-OOPS
-DeepakGupta
-BETpublications
-450
-2002
-80
-COA
-HenryKorth
-McGrowHills
-350
-2003
-*/

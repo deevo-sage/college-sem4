@@ -12,7 +12,8 @@ float Division(float num, float den){
 
 int main(){
 	float numerator, denominator, result;
-	cout<<"Enter Numerator : ";
+	cout << "Program 26\nSidharth Sahni \n30-IT-19\n";
+	cout << "Enter Numerator : ";
 	cin>>numerator;
 	cout<<"Enter Denominator : ";
 	cin>>denominator;
